@@ -263,6 +263,7 @@ app.include_router(qr_router)
 app.include_router(admin_router)
 
 
+
 # =========================================================
 # CORS
 # =========================================================
@@ -273,11 +274,13 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "https://ai-reviewer-0ssx.onrender.com",
+        "https://ai-reviewer-frontend.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 # =========================================================
