@@ -1,0 +1,1469 @@
+/* =========================================================
+   AI REVIEWER
+   BUSINESS INFORMATION
+   MOBILE-FIRST PROFESSIONAL DESIGN
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.business-info-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  width: 100%;
+
+  padding: 16px 14px 32px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(37, 99, 235, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 0% 45%,
+      rgba(14, 165, 233, 0.045),
+      transparent 28%
+    ),
+    #f7f9fc;
+
+  color: #111827;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.business-info-container {
+  width: 100%;
+  max-width: 680px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.business-info-topbar {
+  min-height: 44px;
+
+  display: grid;
+
+  grid-template-columns: 44px 1fr 44px;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.business-info-back {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e4e8ef;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: #536075;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.business-info-back svg {
+  width: 19px;
+  height: 19px;
+}
+
+.business-info-back:hover {
+  background: #ffffff;
+  border-color: #d3dbe7;
+}
+
+.business-info-back:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.business-info-brand {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.business-info-brand-mark {
+  width: 35px;
+  height: 35px;
+
+  flex: 0 0 35px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.20);
+}
+
+.business-info-brand-mark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.business-info-brand div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.business-info-brand strong {
+  color: #171d29;
+
+  font-size: 14px;
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+.business-info-brand span {
+  margin-top: 2px;
+
+  color: #8a94a5;
+
+  font-size: 9px;
+  line-height: 1.2;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SECURE ICON
+   ========================================================= */
+
+.business-info-secure {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  justify-self: end;
+
+  border: 1px solid #e4e8ef;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #7d889a;
+}
+
+.business-info-secure svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.business-info-header {
+  margin-top: 34px;
+
+  margin-bottom: 23px;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.business-info-progress {
+  margin-bottom: 22px;
+}
+
+.business-info-progress-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+}
+
+.business-info-progress-top span {
+  color: #8a94a5;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+.business-info-progress-top strong {
+  color: #667085;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.business-info-progress-track {
+  width: 100%;
+  height: 4px;
+
+  overflow: hidden;
+
+  border-radius: 99px;
+
+  background: #e8edf4;
+}
+
+.business-info-progress-fill {
+  width: 100%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #2563eb;
+}
+
+
+/* =========================================================
+   HEADER KICKER
+   ========================================================= */
+
+.business-info-kicker {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   HEADER TITLE
+   ========================================================= */
+
+.business-info-header h1 {
+  margin: 0;
+
+  color: #121824;
+
+  font-size: 28px;
+
+  line-height: 1.15;
+
+  font-weight: 780;
+
+  letter-spacing: -0.75px;
+}
+
+.business-info-header p {
+  max-width: 540px;
+
+  margin: 9px 0 0;
+
+  color: #707b8d;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.business-info-card {
+  width: 100%;
+
+  padding: 20px 16px;
+
+  border: 1px solid #e5e9f0;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.055),
+    0 2px 5px rgba(15, 23, 42, 0.025);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.business-info-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding-bottom: 18px;
+
+  margin-bottom: 19px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.business-info-card-header-main {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.business-info-updated {
+  margin-left: auto;
+  min-width: 0;
+  text-align: right;
+}
+
+.business-info-updated span {
+  display: block;
+  color: #9aa3b2;
+  font-size: 8px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.65px;
+  text-transform: uppercase;
+}
+
+.business-info-updated strong {
+  display: block;
+  margin-top: 3px;
+  color: #667085;
+  font-size: 9px;
+  line-height: 1.35;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.business-info-card-icon {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #eef5ff;
+
+  color: #2563eb;
+}
+
+.business-info-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.business-info-card-header h2 {
+  margin: 0;
+
+  color: #1a202c;
+
+  font-size: 15px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+.business-info-card-header p {
+  margin: 3px 0 0;
+
+  color: #8a94a5;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FORM FIELD
+   ========================================================= */
+
+.business-info-field {
+  margin-bottom: 19px;
+}
+
+.business-info-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #303847;
+
+  font-size: 12px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.required-mark {
+  margin-left: 3px;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.business-info-input-wrap {
+  width: 100%;
+
+  min-height: 51px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 13px;
+
+  border: 1px solid #dce2eb;
+
+  border-radius: 12px;
+
+  background: #fbfcfe;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.business-info-input-wrap svg {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 18px;
+
+  color: #94a0b2;
+
+  transition: color 180ms ease;
+}
+
+.business-info-input-wrap:focus-within {
+  border-color: #5b8def;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.business-info-input-wrap:focus-within svg {
+  color: #2563eb;
+}
+
+.business-info-input-wrap input {
+  width: 100%;
+  min-width: 0;
+
+  height: 49px;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #151b26;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+.business-info-input-wrap input::placeholder {
+  color: #a1a9b6;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.business-info-textarea-wrap {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 132px;
+
+  padding: 13px;
+
+  border: 1px solid #dce2eb;
+
+  border-radius: 12px;
+
+  background: #fbfcfe;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.business-info-textarea-wrap svg {
+  position: absolute;
+
+  top: 14px;
+  left: 13px;
+
+  width: 18px;
+  height: 18px;
+
+  color: #94a0b2;
+
+  pointer-events: none;
+
+  transition: color 180ms ease;
+}
+
+.business-info-textarea-wrap:focus-within {
+  border-color: #5b8def;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.business-info-textarea-wrap:focus-within svg {
+  color: #2563eb;
+}
+
+.business-info-textarea-wrap textarea {
+  width: 100%;
+
+  min-height: 104px;
+
+  padding: 0 0 0 29px;
+
+  border: none;
+
+  outline: none;
+
+  resize: vertical;
+
+  background: transparent;
+
+  color: #151b26;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+.business-info-textarea-wrap textarea::placeholder {
+  color: #a1a9b6;
+}
+
+
+/* =========================================================
+   LABEL ROW / HINTS
+   ========================================================= */
+
+.business-info-label-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.business-info-label-row label {
+  margin-bottom: 7px;
+}
+
+.business-info-counter {
+  margin-bottom: 7px;
+
+  color: #a0a8b6;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+.business-info-hint {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #99a2b1;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+}
+
+.business-info-hint strong {
+  color: #2563eb;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   QUESTION COUNT
+   ========================================================= */
+
+.question-count-field {
+  margin-top: 4px;
+}
+
+
+/* Current selected count badge */
+
+.question-count-value {
+  min-width: 30px;
+  height: 26px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 8px;
+
+  border-radius: 8px;
+
+  background: #eef5ff;
+
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   QUESTION SLIDER CARD
+   ========================================================= */
+
+.question-slider-card {
+  padding: 15px;
+
+  border: 1px solid #dce5f2;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff,
+      #ffffff
+    );
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.025);
+}
+
+
+/* =========================================================
+   QUESTION SLIDER HEADER
+   ========================================================= */
+
+.question-slider-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.question-slider-header > div:first-child {
+  min-width: 0;
+}
+
+.question-slider-header strong {
+  display: block;
+
+  color: #303847;
+
+  font-size: 12px;
+
+  font-weight: 750;
+}
+
+.question-slider-header span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #929bab;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   QUESTION NUMBER DISPLAY
+   ========================================================= */
+
+.question-slider-number {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 43px;
+
+  border-radius: 12px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   QUESTION RANGE SLIDER
+   ========================================================= */
+
+.question-count-slider {
+  width: 100%;
+
+  height: 5px;
+
+  display: block;
+
+  margin: 0;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  border-radius: 99px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  background: #dbe5f2;
+}
+
+
+/* =========================================================
+   CHROME / EDGE / SAFARI THUMB
+   ========================================================= */
+
+.question-count-slider::-webkit-slider-thumb {
+  width: 21px;
+  height: 21px;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  border: 3px solid #ffffff;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 3px 10px rgba(37, 99, 235, 0.30);
+
+  cursor: grab;
+}
+
+.question-count-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
+
+/* =========================================================
+   FIREFOX THUMB
+   ========================================================= */
+
+.question-count-slider::-moz-range-thumb {
+  width: 21px;
+  height: 21px;
+
+  border: 3px solid #ffffff;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  box-shadow:
+    0 3px 10px rgba(37, 99, 235, 0.30);
+
+  cursor: grab;
+}
+
+.question-count-slider::-moz-range-thumb:active {
+  cursor: grabbing;
+}
+
+
+/* =========================================================
+   RANGE FOCUS
+   ========================================================= */
+
+.question-count-slider:focus {
+  outline: none;
+}
+
+.question-count-slider:focus-visible {
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   QUESTION SCALE
+   ========================================================= */
+
+.question-slider-scale {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  margin-top: 8px;
+
+  color: #9aa3b2;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+.question-slider-scale span:first-child {
+  text-align: left;
+}
+
+.question-slider-scale span:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.business-info-message {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  padding: 11px 12px;
+
+  margin: 1px 0 16px;
+
+  border-radius: 11px;
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+.business-info-message.error {
+  border: 1px solid #fecdd3;
+
+  background: #fff5f6;
+
+  color: #be123c;
+}
+
+.business-info-message.success {
+  border: 1px solid #b9e8cb;
+
+  background: #f2fbf5;
+
+  color: #15803d;
+}
+
+.business-info-message-icon {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 18px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.business-info-message.error
+.business-info-message-icon {
+  background: #ffe4e8;
+}
+
+.business-info-message.success
+.business-info-message-icon {
+  background: #d9f5e3;
+}
+
+
+/* =========================================================
+   BUSINESS INFORMATION ACTIONS
+   ========================================================= */
+
+.business-info-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 10px;
+  width: 100%;
+  margin-top: 4px;
+  align-items: stretch;
+}
+
+.business-info-save-button {
+  width: 100%;
+  min-height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 18px;
+  border: 1px solid #d7dee9;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #344054;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.business-info-save-button:hover {
+  background: #f8fafc;
+  border-color: #c7d1df;
+  box-shadow: 0 5px 14px rgba(15, 23, 42, 0.06);
+  transform: translateY(-1px);
+}
+
+.business-info-save-button:active {
+  transform: scale(0.988);
+}
+
+.business-info-save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.business-info-button-spinner-dark {
+  border-color: rgba(37, 99, 235, 0.20);
+  border-top-color: #2563eb;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.business-info-submit {
+  width: 100%;
+
+  min-height: 53px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.20);
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.business-info-submit svg {
+  width: 18px;
+  height: 18px;
+}
+
+.business-info-submit:hover {
+  background: #1d4ed8;
+
+  box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.25);
+
+  transform: translateY(-1px);
+}
+
+.business-info-submit:active {
+  transform: scale(0.988);
+}
+
+.business-info-submit:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   BUTTON SPINNER
+   ========================================================= */
+
+.business-info-button-spinner {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation:
+    business-info-spin
+    0.7s
+    linear
+    infinite;
+}
+
+@keyframes business-info-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.business-info-footer-text {
+  margin: 11px 0 0;
+
+  text-align: center;
+
+  color: #9ba4b2;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.business-info-bottom-note {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 18px;
+
+  color: #9ba3b1;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+.business-info-bottom-note svg {
+  width: 14px;
+  height: 14px;
+
+  color: #8f99aa;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.business-info-loading {
+  min-height: 80vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #6b7280;
+}
+
+.business-info-loading p {
+  margin-top: 13px;
+
+  color: #7d8797;
+
+  font-size: 12px;
+}
+
+.business-info-spinner {
+  width: 31px;
+  height: 31px;
+
+  border: 3px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation:
+    business-info-spin
+    0.8s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   LARGER MOBILE
+   ========================================================= */
+
+@media (min-width: 480px) {
+
+  .business-info-page {
+    padding: 24px 18px 40px;
+  }
+
+  .business-info-header {
+    margin-top: 40px;
+  }
+
+  .business-info-header h1 {
+    font-size: 31px;
+  }
+
+  .business-info-card {
+    padding: 24px 21px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 600px) {
+
+  .business-info-page {
+    padding: 38px 24px 55px;
+  }
+
+  .business-info-container {
+    max-width: 660px;
+  }
+
+  .business-info-header {
+    margin-top: 48px;
+  }
+
+  .business-info-header h1 {
+    font-size: 35px;
+  }
+
+  .business-info-header p {
+    font-size: 14px;
+  }
+
+  .business-info-card {
+    padding: 30px 32px;
+  }
+
+  .business-info-field {
+    margin-bottom: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+  .business-info-actions {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .business-info-page {
+    padding: 50px 30px 65px;
+  }
+
+  .business-info-container {
+    max-width: 690px;
+  }
+
+  .business-info-card {
+    padding: 32px 36px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .business-info-card-header {
+    align-items: flex-start;
+  }
+
+  .business-info-updated {
+    max-width: 150px;
+  }
+
+  .business-info-updated strong {
+    white-space: normal;
+  }
+}
+
+
+@media (max-width: 380px) {
+
+  .business-info-actions {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: 8px;
+  }
+
+  .business-info-save-button,
+  .business-info-submit {
+    min-height: 52px;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .business-info-submit svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+  }
+
+  .business-info-page {
+    padding: 13px 11px 27px;
+  }
+
+  .business-info-topbar {
+    grid-template-columns:
+      40px 1fr 40px;
+  }
+
+  .business-info-back,
+  .business-info-secure {
+    width: 37px;
+    height: 37px;
+  }
+
+  .business-info-brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .business-info-brand strong {
+    font-size: 13px;
+  }
+
+  .business-info-header {
+    margin-top: 28px;
+  }
+
+  .business-info-header h1 {
+    font-size: 25px;
+  }
+
+  .business-info-header p {
+    font-size: 12px;
+  }
+
+  .business-info-card {
+    padding: 18px 14px;
+
+    border-radius: 17px;
+  }
+
+  .business-info-card-header {
+    margin-bottom: 17px;
+  }
+
+  .question-slider-card {
+    padding: 13px;
+  }
+
+  .question-slider-header {
+    gap: 8px;
+  }
+
+  .question-slider-number {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .business-info-submit {
+    min-height: 51px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .business-info-back,
+  .business-info-save-button,
+  .business-info-submit,
+  .business-info-input-wrap,
+  .business-info-textarea-wrap {
+    transition: none;
+  }
+
+  .business-info-button-spinner,
+  .business-info-spinner {
+    animation: none;
+  }
+}

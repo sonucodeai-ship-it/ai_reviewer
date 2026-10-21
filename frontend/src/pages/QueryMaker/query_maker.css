@@ -1,0 +1,987 @@
+/* =========================================================
+   QUERY MAKER
+   Mobile-first professional UI
+   ========================================================= */
+
+.query-maker-page {
+  min-height: 100vh;
+
+  padding: 18px 12px 40px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.08),
+      transparent 32%
+    ),
+    #f5f7fb;
+
+  color: #111827;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.query-maker-container {
+  width: 100%;
+  max-width: 760px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.query-maker-topbar {
+  display: grid;
+
+  grid-template-columns: 1fr 42px;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+
+.query-maker-brand {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+
+.query-maker-brand-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.20);
+}
+
+
+.query-maker-brand strong {
+  display: block;
+
+  color: #111827;
+
+  font-size: 14px;
+}
+
+
+.query-maker-brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+
+.query-maker-secure {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  justify-self: end;
+
+  border-radius: 50%;
+
+  background: #ecfdf5;
+
+  color: #16a34a;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.query-maker-intro {
+  text-align: center;
+
+  margin-bottom: 24px;
+}
+
+
+.query-maker-kicker {
+  display: inline-block;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+
+.query-maker-intro h1 {
+  margin: 10px 0 9px;
+
+  color: #111827;
+
+  font-size: 31px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+}
+
+
+.query-maker-intro h1 span {
+  color: #2563eb;
+}
+
+
+.query-maker-intro p {
+  max-width: 550px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   AI QUESTIONNAIRE CONTROLS
+   Unified question count + regenerate card
+   ========================================================= */
+
+.query-maker-ai-controls {
+  display: grid;
+  gap: 0;
+  margin-bottom: 14px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045);
+}
+
+.query-maker-count-panel {
+  min-width: 0;
+}
+
+.query-maker-count-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.query-maker-control-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.15px;
+}
+
+.query-maker-count-heading strong,
+.query-maker-regenerate-copy strong {
+  display: block;
+  color: #1e293b;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.query-maker-count-heading p,
+.query-maker-regenerate-copy p {
+  margin: 3px 0 0;
+  color: #94a3b8;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.query-maker-question-count-value {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  border: 1px solid #dbe5f1;
+  border-radius: 11px;
+  background: #f8fafc;
+  color: #2563eb;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.query-maker-slider-wrap {
+  margin-top: 14px;
+}
+
+.query-maker-question-slider {
+  width: 100%;
+  height: 5px;
+  display: block;
+  margin: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.query-maker-question-slider:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.query-maker-question-scale {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 6px;
+  color: #a0aec0;
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.query-maker-question-scale span:first-child {
+  text-align: left;
+}
+
+.query-maker-question-scale span:last-child {
+  text-align: right;
+}
+
+.query-maker-ai-divider {
+  height: 1px;
+  margin: 16px 0;
+  background: #eef2f7;
+}
+
+.query-maker-regenerate-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.query-maker-regenerate-copy {
+  min-width: 0;
+}
+
+.query-maker-regenerate-copy .query-maker-control-label {
+  color: #64748b;
+}
+
+.query-maker-regenerate-button {
+  min-width: 108px;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 0 13px;
+  border: 1px solid #bfdbfe;
+  border-radius: 9px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.query-maker-regenerate-button:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.10);
+  transform: translateY(-1px);
+}
+
+.query-maker-regenerate-button:active {
+  transform: scale(0.985);
+}
+
+.query-maker-regenerate-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.query-maker-regenerate-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.query-maker-button-spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(37, 99, 235, 0.20);
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: query-maker-spin 0.8s linear infinite;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.query-maker-message {
+  margin-bottom: 14px;
+
+  padding: 11px 13px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+.query-maker-message.error {
+  border: 1px solid #fecaca;
+
+  background: #fff1f2;
+
+  color: #be123c;
+}
+
+
+.query-maker-message.success {
+  border: 1px solid #bbf7d0;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.query-maker-card {
+  padding: 17px 12px;
+
+  border: 1px solid #e5eaf1;
+
+  border-radius: 17px;
+
+  background: white;
+
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   QUESTION EDITOR
+   ========================================================= */
+
+.query-editor {
+  padding: 2px 0;
+}
+
+
+.query-editor-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+
+.query-number {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+.query-editor-header span {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.query-editor-header strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #334155;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   QUESTION INPUT
+   ========================================================= */
+
+.query-question-input {
+  width: 100%;
+
+  min-height: 62px;
+
+  padding: 11px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  border: 1px solid #dbe1e9;
+
+  border-radius: 10px;
+
+  background: #fbfcfe;
+
+  color: #111827;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  outline: none;
+}
+
+
+.query-question-input:focus {
+  border-color: #2563eb;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   OPTIONS HEADING
+   ========================================================= */
+
+.query-options-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin: 15px 0 8px;
+}
+
+
+.query-options-heading span {
+  color: #64748b;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.query-options-heading small {
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.query-options-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.query-option-row {
+  display: grid;
+
+  grid-template-columns: 26px 1fr 30px;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.query-option-number {
+  width: 26px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #f8fafc;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+.query-option-row input {
+  width: 100%;
+
+  min-height: 40px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e0e5ec;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  outline: none;
+}
+
+
+.query-option-row input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.07);
+}
+
+
+.query-option-remove {
+  width: 30px;
+  height: 32px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #94a3b8;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+
+.query-option-remove:hover {
+  border-color: #fecaca;
+
+  color: #dc2626;
+
+  background: #fff7f7;
+}
+
+
+.query-option-remove:disabled {
+  opacity: 0.3;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ADD OPTION
+   ========================================================= */
+
+.query-add-option {
+  margin-top: 9px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.query-add-option:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.query-divider {
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: #edf0f4;
+}
+
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.query-maker-action {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin-top: 18px;
+
+  padding: 15px;
+
+  border: 1px solid #e5eaf1;
+
+  border-radius: 15px;
+
+  background: white;
+}
+
+
+.query-maker-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.query-maker-status-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ecfdf5;
+
+  color: #16a34a;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+.query-maker-status strong {
+  display: block;
+
+  color: #334155;
+
+  font-size: 10px;
+}
+
+
+.query-maker-status span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.query-save-button {
+  width: 100%;
+
+  min-height: 47px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+
+.query-save-button span {
+  font-size: 17px;
+}
+
+
+.query-save-button:hover {
+  background: #1d4ed8;
+}
+
+
+.query-save-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.query-maker-footer {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 17px;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  text-align: center;
+}
+
+
+.query-maker-footer span {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.query-maker-loading {
+  min-height: 80vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #64748b;
+}
+
+
+.query-maker-loading p {
+  margin-top: 12px;
+
+  font-size: 12px;
+}
+
+
+.query-maker-spinner {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation:
+    query-maker-spin
+    0.8s linear infinite;
+}
+
+
+@keyframes query-maker-spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@media (max-width: 430px) {
+  .query-maker-ai-controls {
+    padding: 14px;
+  }
+
+  .query-maker-regenerate-panel {
+    align-items: flex-end;
+  }
+
+  .query-maker-regenerate-copy p {
+    max-width: 210px;
+  }
+
+  .query-maker-regenerate-button {
+    min-width: 101px;
+    padding: 0 10px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+   ========================================================= */
+
+@media (min-width: 650px) {
+
+  .query-maker-page {
+    padding: 30px 20px 60px;
+  }
+
+
+  .query-maker-intro h1 {
+    font-size: 38px;
+  }
+
+
+  .query-maker-card {
+    padding: 28px 25px;
+  }
+
+
+  .query-maker-action {
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+
+  .query-save-button {
+    width: auto;
+
+    min-width: 190px;
+
+    padding: 0 20px;
+  }
+
+}

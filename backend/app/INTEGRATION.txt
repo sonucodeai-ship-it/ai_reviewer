@@ -1,0 +1,43 @@
+# ============================================================
+# BACKEND INTEGRATION
+# ============================================================
+
+# app/main.py
+
+from app.admin_routes import router as admin_router
+
+app.include_router(admin_router)
+
+
+# ============================================================
+# FIRST-TIME ADMIN SETUP
+# ============================================================
+
+# 1. Run database/admin_schema.sql once.
+#
+# 2. Set a strong JWT_SECRET in .env.
+#
+# 3. Run:
+#
+#       python -m app.admin_bootstrap
+#
+# The Python bootstrap creates:
+# - super_admin role
+# - permissions
+# - role/permission mappings
+# - the first Super Administrator
+#
+# There are NO role/permission INSERT statements in SQL.
+
+
+# ============================================================
+# FRONTEND ROUTES
+# ============================================================
+
+# import AdminLogin from "./AdminLogin";
+# import AdminDashboard from "./AdminDashboard";
+#
+# <Route path="/admin/login" element={<AdminLogin />} />
+# <Route path="/admin" element={<AdminDashboard />} />
+#
+# Keep /admin outside the normal customer AppBar.

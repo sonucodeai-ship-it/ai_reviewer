@@ -1,0 +1,2 @@
+react-router-dom
+npm install qrcode

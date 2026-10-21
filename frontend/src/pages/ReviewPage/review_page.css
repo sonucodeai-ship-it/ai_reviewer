@@ -1,0 +1,1524 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.review-generator-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(48, 170, 150, 0.08),
+      transparent 28%
+    ),
+    #f6faf9;
+
+  color: #193b38;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  padding: 40px 20px 60px;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.review-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.review-circle-one {
+  width: 420px;
+  height: 420px;
+  top: -220px;
+  right: -150px;
+  background: rgba(47, 168, 148, 0.07);
+}
+
+.review-circle-two {
+  width: 300px;
+  height: 300px;
+  bottom: -180px;
+  left: -130px;
+  background: rgba(47, 168, 148, 0.05);
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.review-generator-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.review-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 45px;
+}
+
+.review-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.review-logo {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #1f8f7b;
+  color: white;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 20px rgba(31, 143, 123, 0.2);
+}
+
+.review-brand h1 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.review-brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #78908c;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  background: white;
+
+  border: 1px solid #e1ece9;
+  border-radius: 30px;
+
+  color: #607b76;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.secure-icon {
+  width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e9f7f3;
+  color: #278e7b;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+
+  max-width: 600px;
+
+  margin: 0 auto 45px;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #a0afac;
+
+  font-size: 10px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+.progress-circle {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf2f0;
+
+  color: #9aa9a5;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.progress-step.completed .progress-circle {
+  background: #dff3ed;
+  color: #238d7a;
+}
+
+.progress-step.current .progress-circle {
+  background: #238f7b;
+  color: white;
+
+  box-shadow:
+    0 0 0 5px rgba(35, 143, 123, 0.1);
+}
+
+.progress-step.current {
+  color: #238b78;
+}
+
+.progress-line {
+  flex: 1;
+
+  height: 1px;
+
+  margin: 0 12px;
+
+  background: #dfe8e5;
+}
+
+.progress-line.active {
+  background: #8fcfc1;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.review-intro {
+  text-align: center;
+
+  max-width: 680px;
+
+  margin: 0 auto 35px;
+}
+
+.review-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #238d7b;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.review-intro h2 {
+  margin: 0;
+
+  color: #173c37;
+
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.08;
+
+  letter-spacing: -1.8px;
+
+  font-weight: 750;
+}
+
+.review-intro h2 span {
+  color: #23927e;
+}
+
+.review-intro p {
+  max-width: 560px;
+
+  margin: 16px auto 0;
+
+  color: #738b87;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-message {
+  margin: 0 auto 18px;
+
+  max-width: 800px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #f1d3d3;
+  border-radius: 11px;
+
+  background: #fff7f7;
+
+  color: #b34b4b;
+
+  font-size: 11px;
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.review-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    320px;
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   MAIN REVIEW CARD
+========================================================= */
+
+.review-main-card {
+  padding: 28px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #e2ece9;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 60px rgba(30, 79, 71, 0.07);
+}
+
+/* Card header */
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.ai-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.ai-icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eaf8f4;
+
+  color: #218d79;
+
+  font-size: 18px;
+}
+
+.ai-title h3 {
+  margin: 0;
+
+  color: #284a45;
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.ai-title span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #91a29e;
+
+  font-size: 10px;
+}
+
+.generated-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 20px;
+
+  background: #f2faf7;
+
+  color: #318875;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.generated-badge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #37a98f;
+}
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+.stars {
+  color: #e4a63a;
+
+  font-size: 17px;
+
+  letter-spacing: 1px;
+}
+
+.rating-row > span {
+  color: #8c9d99;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   REVIEW TEXT
+========================================================= */
+
+.review-text-box {
+  min-height: 205px;
+
+  padding: 23px;
+
+  border: 1px solid #e5eeeb;
+
+  border-radius: 15px;
+
+  background: #fbfdfc;
+}
+
+.review-text-box p {
+  margin: 0;
+
+  color: #405c57;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+
+  letter-spacing: -0.05px;
+}
+
+.review-text-box.editing {
+  border-color: #54ad9b;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px rgba(45, 157, 137, 0.07);
+}
+
+.review-text-box textarea {
+  width: 100%;
+  min-height: 205px;
+
+  border: none;
+  outline: none;
+
+  resize: vertical;
+
+  background: transparent;
+
+  color: #405c57;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 10px;
+
+  color: #9baaa7;
+
+  font-size: 9px;
+}
+
+.meta-dot {
+  color: #c9d4d1;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.review-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 22px;
+}
+
+.secondary-button,
+.copy-button {
+  height: 41px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.secondary-button {
+  border: 1px solid #dfe9e6;
+
+  background: white;
+
+  color: #526d68;
+}
+
+.secondary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  border-color: #afd4ca;
+
+  background: #f7fbfa;
+}
+
+.secondary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.copy-button {
+  margin-left: auto;
+
+  border: none;
+
+  background: #eaf7f3;
+
+  color: #218975;
+}
+
+.copy-button:hover {
+  transform: translateY(-1px);
+
+  background: #dff2ed;
+}
+
+.spin {
+  display: inline-block;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   EXPERIENCE SUMMARY
+========================================================= */
+
+.experience-summary {
+  padding: 24px;
+
+  background: white;
+
+  border: 1px solid #e2ece9;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 60px rgba(30, 79, 71, 0.06);
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 20px;
+}
+
+.summary-eyebrow {
+  color: #8fa09c;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.summary-header h3 {
+  margin: 5px 0 0;
+
+  color: #294a45;
+
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.summary-check {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8f7f2;
+
+  color: #278f7a;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* Summary items */
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #edf2f0;
+}
+
+.summary-icon,
+.summary-avatar {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eff7f5;
+
+  color: #238d79;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.summary-avatar {
+  background: #e4f3ef;
+}
+
+.summary-detail {
+  min-width: 0;
+}
+
+.summary-detail > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #9aa9a5;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+.summary-detail strong {
+  display: block;
+
+  color: #405d58;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.experience-summary-item {
+  align-items: flex-start;
+}
+
+/* Tags */
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.experience-tag {
+  display: inline-block !important;
+
+  padding: 5px 7px;
+
+  margin: 0 !important;
+
+  border-radius: 6px;
+
+  background: #f1f8f6;
+
+  color: #458176 !important;
+
+  font-size: 8px !important;
+
+  font-weight: 650 !important;
+
+  letter-spacing: 0 !important;
+}
+
+/* Summary note */
+
+.summary-divider {
+  height: 1px;
+
+  background: #edf2f0;
+
+  margin: 18px 0;
+}
+
+.ai-note {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  padding: 11px;
+
+  border-radius: 11px;
+
+  background: #f5faf8;
+}
+
+.note-icon {
+  color: #29917d;
+
+  font-size: 14px;
+}
+
+.ai-note strong {
+  display: block;
+
+  color: #4c6a65;
+
+  font-size: 9px;
+}
+
+.ai-note p {
+  margin: 4px 0 0;
+
+  color: #91a09c;
+
+  font-size: 8px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   GOOGLE REVIEW CTA — INSIDE REVIEW CARD
+========================================================= */
+.google-review-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid #cfe8df;
+  border-radius: 15px;
+  background: linear-gradient(115deg, #eef9f5, #f9fdfb);
+}
+
+.google-review-info,
+.google-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.google-icon {
+  display: flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e1ebe8;
+  border-radius: 11px;
+  background: #fff;
+  color: #4285f4;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.google-review-info strong,
+.google-message strong {
+  display: block;
+  color: #315a50;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.google-review-info span,
+.google-message span {
+  display: block;
+  margin-top: 4px;
+  color: #718e85;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.google-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 11px;
+  background: #218f7b;
+  color: #fff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.35;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(33, 143, 123, 0.18);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #197b69;
+  box-shadow: 0 11px 25px rgba(33, 143, 123, 0.23);
+}
+
+.google-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.google-arrow { font-size: 16px; }
+
+/* Fourth-question summary */
+.overall-summary-icon {
+  background: #e9f5ee;
+  color: #278e72;
+}
+
+.overall-tag {
+  background: #eaf7f0 !important;
+  color: #327a60 !important;
+}
+
+/* Keyboard accessibility */
+.google-button:focus-visible,
+.secondary-button:focus-visible,
+.copy-button:focus-visible {
+  outline: 3px solid rgba(35, 143, 123, 0.35);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.review-footer {
+  margin-top: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #98a7a4;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .review-content {
+    grid-template-columns: 1fr;
+  }
+
+  .review-main-card {
+    order: 1;
+  }
+
+  .experience-summary {
+    order: 2;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .review-generator-page {
+    padding: 20px 12px 35px;
+  }
+
+  .review-page-header {
+    margin-bottom: 30px;
+  }
+
+  .secure-badge {
+    display: none;
+  }
+
+  /* Progress */
+
+  .progress-wrapper {
+    margin-bottom: 28px;
+  }
+
+  .progress-step span {
+    display: none;
+  }
+
+  .progress-circle {
+    width: 27px;
+    height: 27px;
+
+    font-size: 9px;
+  }
+
+  .progress-line {
+    margin: 0 7px;
+  }
+
+  /* Intro */
+
+  .review-intro {
+    margin-bottom: 24px;
+  }
+
+  .review-eyebrow {
+    margin-bottom: 9px;
+
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .review-intro h2 {
+    font-size: 34px;
+  }
+
+  .review-intro p {
+    margin-top: 11px;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Main card */
+
+  .review-main-card {
+    padding: 20px 14px;
+
+    border-radius: 18px;
+  }
+
+  .experience-summary {
+    padding: 18px 14px;
+
+    border-radius: 17px;
+  }
+
+  .card-top {
+    margin-bottom: 17px;
+  }
+
+  .ai-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+  }
+
+  .ai-title {
+    gap: 9px;
+  }
+
+  .ai-title h3 {
+    font-size: 12px;
+  }
+
+  .ai-title span {
+    font-size: 8px;
+  }
+
+  .generated-badge {
+    padding: 5px 7px;
+
+    font-size: 7px;
+  }
+
+  /* Rating */
+
+  .rating-row {
+    margin-bottom: 11px;
+  }
+
+  .stars {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .rating-row > span {
+    font-size: 8px;
+  }
+
+  /* Review */
+
+  .review-text-box {
+    min-height: 175px;
+
+    padding: 16px;
+
+    border-radius: 12px;
+  }
+
+  .review-text-box p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  .review-text-box textarea {
+    min-height: 175px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  .review-meta {
+    font-size: 8px;
+  }
+
+  /* Action buttons */
+
+  .review-actions {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+
+    margin-top: 17px;
+  }
+
+  .secondary-button,
+  .copy-button {
+    width: 100%;
+
+    height: 39px;
+
+    padding: 0 7px;
+
+    border-radius: 9px;
+
+    font-size: 9px;
+  }
+
+  .copy-button {
+    margin-left: 0;
+  }
+
+  /* Summary */
+
+  .summary-header {
+    margin-bottom: 14px;
+  }
+
+  .summary-header h3 {
+    font-size: 13px;
+  }
+
+  .summary-check {
+    width: 24px;
+    height: 24px;
+  }
+
+  .summary-item {
+    padding: 10px 0;
+
+    gap: 8px;
+  }
+
+  .summary-icon,
+  .summary-avatar {
+    width: 31px;
+    height: 31px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+  .summary-detail > span {
+    margin-bottom: 3px;
+
+    font-size: 6.5px;
+  }
+
+  .summary-detail strong {
+    font-size: 10px;
+  }
+
+  .experience-tag {
+    padding: 4px 6px;
+
+    font-size: 7px !important;
+  }
+
+  .summary-divider {
+    margin: 13px 0;
+  }
+
+  .ai-note {
+    padding: 9px;
+
+    gap: 7px;
+  }
+
+  .note-icon {
+    font-size: 12px;
+  }
+
+  .ai-note strong {
+    font-size: 8px;
+  }
+
+  .ai-note p {
+    font-size: 7px;
+  }
+
+  /* Google CTA */
+  .google-review-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+    margin-top: 17px;
+    padding: 14px;
+    border-radius: 13px;
+  }
+
+  .google-review-info,
+  .google-message { gap: 10px; }
+
+  .google-icon {
+    flex-basis: 35px;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+  }
+
+  .google-review-info strong,
+  .google-message strong { font-size: 11px; }
+
+  .google-review-info span,
+  .google-message span { font-size: 9px; }
+
+  .google-button {
+    width: 100%;
+    min-height: 46px;
+    font-size: 11px;
+  }
+
+  .review-footer {
+    flex-wrap: wrap;
+
+    margin-top: 18px;
+
+    font-size: 8px;
+
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+  .review-generator-page {
+    padding: 16px 9px 28px;
+  }
+
+  .review-page-header {
+    margin-bottom: 24px;
+  }
+
+  .review-brand {
+    gap: 9px;
+  }
+
+  .review-logo {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+  }
+
+  .review-brand h1 {
+    font-size: 16px;
+  }
+
+  .review-brand span {
+    font-size: 9px;
+  }
+
+  /* Progress */
+
+  .progress-wrapper {
+    margin-bottom: 23px;
+  }
+
+  .progress-circle {
+    width: 25px;
+    height: 25px;
+
+    font-size: 8px;
+  }
+
+  .progress-line {
+    margin: 0 5px;
+  }
+
+  /* Intro */
+
+  .review-intro {
+    margin-bottom: 19px;
+  }
+
+  .review-intro h2 {
+    font-size: 29px;
+
+    letter-spacing: -1px;
+  }
+
+  .review-intro p {
+    font-size: 10px;
+  }
+
+  /* Main card */
+
+  .review-main-card {
+    padding: 17px 10px;
+
+    border-radius: 16px;
+  }
+
+  .experience-summary {
+    padding: 16px 10px;
+
+    border-radius: 15px;
+  }
+
+  .ai-icon {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+  }
+
+  .ai-title {
+    gap: 7px;
+  }
+
+  .ai-title h3 {
+    font-size: 10px;
+  }
+
+  .ai-title span {
+    font-size: 7px;
+  }
+
+  .generated-badge {
+    display: none;
+  }
+
+  /* Rating */
+
+  .stars {
+    font-size: 12px;
+  }
+
+  .rating-row > span {
+    font-size: 7px;
+  }
+
+  /* Review */
+
+  .review-text-box {
+    min-height: 160px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+  }
+
+  .review-text-box p {
+    font-size: 11px;
+
+    line-height: 1.65;
+  }
+
+  .review-text-box textarea {
+    min-height: 160px;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+  }
+
+  .review-meta {
+    font-size: 7px;
+  }
+
+  /* Keep buttons compact in 2 columns */
+
+  .review-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+  .secondary-button,
+  .copy-button {
+    height: 37px;
+
+    padding: 0 5px;
+
+    font-size: 8px;
+
+    gap: 4px;
+  }
+
+  /* Summary */
+
+  .summary-eyebrow {
+    font-size: 6px;
+  }
+
+  .summary-header h3 {
+    font-size: 12px;
+  }
+
+  .summary-check {
+    width: 22px;
+    height: 22px;
+
+    font-size: 9px;
+  }
+
+  .summary-item {
+    padding: 9px 0;
+  }
+
+  .summary-icon,
+  .summary-avatar {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+  }
+
+  .summary-detail > span {
+    font-size: 6px;
+  }
+
+  .summary-detail strong {
+    font-size: 9px;
+  }
+
+  .experience-tag {
+    padding: 3px 5px;
+
+    font-size: 6.5px !important;
+  }
+
+  /* Google CTA */
+  .google-review-card { padding: 12px; }
+
+  .google-icon {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .google-review-info strong,
+  .google-message strong { font-size: 10px; }
+
+  .google-review-info span,
+  .google-message span { font-size: 8px; }
+
+  .google-button { min-height: 44px; font-size: 10px; }
+
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+  .review-generator-page {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .review-main-card {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .experience-summary {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .review-actions {
+    gap: 5px;
+  }
+
+  .secondary-button,
+  .copy-button {
+    font-size: 7.5px;
+  }
+
+  .google-message strong {
+    font-size: 8px;
+  }
+
+  .google-message span {
+    font-size: 6.5px;
+  }
+}

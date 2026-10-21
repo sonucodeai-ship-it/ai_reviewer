@@ -1,0 +1,671 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --edit-bg: #f6f7fb;
+  --edit-surface: #ffffff;
+  --edit-surface-soft: #fbfcfe;
+  --edit-text: #101828;
+  --edit-text-secondary: #475467;
+  --edit-text-muted: #667085;
+  --edit-text-faint: #98a2b3;
+  --edit-border: #e4e7ec;
+  --edit-border-strong: #d0d5dd;
+  --edit-primary: #111827;
+  --edit-accent: #5b4aff;
+  --edit-accent-soft: #f0edff;
+  --edit-danger: #b42318;
+  --edit-radius-lg: 20px;
+  --edit-radius-md: 15px;
+  --edit-radius-sm: 11px;
+}
+
+.website-edit-page {
+  min-height: 100dvh;
+  padding: 24px 14px 56px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(91, 74, 255, 0.08),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 0% 28%,
+      rgba(0, 122, 255, 0.045),
+      transparent 24%
+    ),
+    var(--edit-bg);
+  color: var(--edit-text);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+/* Main content width */
+.website-edit-shell {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------
+   HEADER
+   The old back-button column has intentionally been removed.
+   The header is now a clean content + version layout.
+------------------------------------------------------- */
+
+.website-edit-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 24px;
+  padding: 2px 1px 0;
+}
+
+.website-edit-header > div {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.website-edit-kicker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 9px;
+  border: 1px solid #dedaff;
+  border-radius: 999px;
+  background: rgba(240, 237, 255, 0.72);
+  color: var(--edit-accent);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.15px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.website-edit-header h1 {
+  margin: 9px 0 6px;
+  color: var(--edit-text);
+  font-size: clamp(25px, 6vw, 35px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+
+.website-edit-header p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--edit-text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.website-edit-header p strong {
+  color: var(--edit-text-secondary);
+  font-weight: 750;
+}
+
+.website-edit-version {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  padding: 8px 11px;
+  border: 1px solid #dedaff;
+  border-radius: 999px;
+  background: var(--edit-accent-soft);
+  color: var(--edit-accent);
+  font-size: 10px;
+  font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------
+   ALERT
+------------------------------------------------------- */
+
+.website-edit-alert {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 14px 15px;
+  border: 1px solid #f1caca;
+  border-radius: var(--edit-radius-md);
+  background: #fff7f7;
+  color: #9b2c2c;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.website-edit-alert strong {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* -------------------------------------------------------
+   INTRO
+------------------------------------------------------- */
+
+.website-edit-intro {
+  display: grid;
+  gap: 13px;
+  margin-bottom: 16px;
+  padding: 17px;
+  border: 1px solid var(--edit-border);
+  border-radius: var(--edit-radius-lg);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045);
+}
+
+.website-edit-intro div {
+  display: grid;
+  gap: 5px;
+}
+
+.website-edit-intro span {
+  color: var(--edit-text-faint);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.website-edit-intro strong {
+  color: var(--edit-text);
+  font-size: 16px;
+  font-weight: 780;
+  line-height: 1.35;
+}
+
+.website-edit-intro p {
+  margin: 0;
+  color: var(--edit-text-muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+/* -------------------------------------------------------
+   FORM SECTIONS
+------------------------------------------------------- */
+
+.website-edit-form {
+  display: grid;
+  gap: 14px;
+}
+
+.website-edit-question-list {
+  display: grid;
+  gap: 12px;
+}
+
+/* -------------------------------------------------------
+   COLOR THEME
+------------------------------------------------------- */
+
+.website-edit-color-theme {
+  padding: 17px;
+  border: 1px solid var(--edit-border);
+  border-radius: var(--edit-radius-lg);
+  background: var(--edit-surface);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.website-edit-color-theme h2 {
+  margin: 6px 0 4px;
+  color: var(--edit-text);
+  font-size: 16px;
+  font-weight: 780;
+  line-height: 1.3;
+}
+
+.website-edit-color-theme p {
+  margin: 0;
+  color: var(--edit-text-muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.website-edit-color-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.website-edit-color-card {
+  padding: 12px;
+  border: 1px solid #e9ecf1;
+  border-radius: var(--edit-radius-md);
+  background: var(--edit-surface-soft);
+}
+
+.website-edit-color-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.website-edit-color-card-top label {
+  color: var(--edit-text-secondary);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.website-edit-color-card-top span {
+  color: var(--edit-text-faint);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.website-edit-color-control {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+}
+
+.website-edit-color-picker {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 42px;
+  overflow: hidden;
+  border: 1px solid var(--edit-border-strong);
+  border-radius: var(--edit-radius-sm);
+  background: var(--selected-color, #fff);
+  cursor: pointer;
+}
+
+.website-edit-color-picker.empty {
+  border-style: dashed;
+  background: #fafbfc;
+  color: var(--edit-text-faint);
+}
+
+.website-edit-color-picker.empty span {
+  position: relative;
+  z-index: 1;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.website-edit-color-picker input[type="color"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.website-edit-ai-color-button {
+  min-height: 42px;
+  border: 1px solid var(--edit-border-strong);
+  border-radius: var(--edit-radius-sm);
+  background: #fff;
+  color: var(--edit-text-secondary);
+  font: 800 10px/1 Inter, sans-serif;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------
+   QUESTION CARDS
+------------------------------------------------------- */
+
+.website-edit-question {
+  padding: 17px;
+  border: 1px solid var(--edit-border);
+  border-radius: var(--edit-radius-lg);
+  background: var(--edit-surface);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.website-edit-question-head {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.website-edit-question-head > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #f5f3ff;
+  color: var(--edit-accent);
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.website-edit-question-head label {
+  display: block;
+  color: var(--edit-text);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.website-edit-question-head label em {
+  margin-left: 4px;
+  color: var(--edit-danger);
+  font-style: normal;
+}
+
+.website-edit-question-head small {
+  display: block;
+  margin-top: 5px;
+  color: var(--edit-text-faint);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.website-edit-question textarea {
+  display: block;
+  width: 100%;
+  min-height: 116px;
+  margin-top: 14px;
+  padding: 12px;
+  resize: vertical;
+  border: 1px solid #dfe3e8;
+  border-radius: 13px;
+  outline: none;
+  background: var(--edit-surface-soft);
+  color: var(--edit-text);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.6;
+  transition:
+    border-color 140ms ease,
+    background 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.website-edit-question textarea::placeholder {
+  color: #a3acb9;
+}
+
+.website-edit-question textarea:focus {
+  border-color: #8f84ff;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(91, 74, 255, 0.1);
+}
+
+/* -------------------------------------------------------
+   STICKY SAVE BAR
+------------------------------------------------------- */
+
+.website-edit-footer {
+  position: sticky;
+  bottom: 10px;
+  z-index: 5;
+  display: grid;
+  gap: 13px;
+  margin-top: 2px;
+  padding: 14px;
+  border: 1px solid rgba(221, 225, 232, 0.96);
+  border-radius: var(--edit-radius-lg);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.website-edit-footer > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.website-edit-footer strong {
+  color: var(--edit-text);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.website-edit-footer span {
+  color: var(--edit-text-muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.website-edit-footer-actions {
+  display: grid;
+  grid-template-columns: minmax(92px, auto) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.website-edit-cancel,
+.website-edit-save,
+.website-edit-error button {
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 13px;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease;
+}
+
+.website-edit-cancel {
+  border: 1px solid #dfe3e8;
+  background: #fff;
+  color: var(--edit-text-secondary);
+}
+
+.website-edit-save,
+.website-edit-error button {
+  border: 0;
+  background: var(--edit-primary);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.14);
+}
+
+.website-edit-cancel:hover:not(:disabled) {
+  border-color: #c7c2f8;
+  background: #f8f7ff;
+  transform: translateY(-1px);
+}
+
+.website-edit-save:hover:not(:disabled),
+.website-edit-error button:hover:not(:disabled) {
+  background: #0b1220;
+  box-shadow: 0 11px 26px rgba(17, 24, 39, 0.18);
+  transform: translateY(-1px);
+}
+
+.website-edit-ai-color-button:hover:not(:disabled) {
+  border-color: #c7c2f8;
+  background: #f8f7ff;
+  transform: translateY(-1px);
+}
+
+.website-edit-cancel:focus-visible,
+.website-edit-save:focus-visible,
+.website-edit-ai-color-button:focus-visible,
+.website-edit-error button:focus-visible {
+  outline: 3px solid rgba(91, 74, 255, 0.18);
+  outline-offset: 2px;
+}
+
+.website-edit-cancel:disabled,
+.website-edit-save:disabled,
+.website-edit-ai-color-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------------
+   LOADING / ERROR
+------------------------------------------------------- */
+
+.website-edit-loading,
+.website-edit-error {
+  max-width: 580px;
+  margin: 12vh auto 0;
+  padding: 32px 22px;
+  border: 1px solid var(--edit-border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.97);
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.055);
+}
+
+.website-edit-loading {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.website-edit-loading strong {
+  color: var(--edit-text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.website-edit-loading span,
+.website-edit-error p {
+  margin: 0;
+  color: var(--edit-text-muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.website-edit-error h1 {
+  margin: 8px 0;
+  color: var(--edit-text);
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.website-edit-error button {
+  margin-top: 18px;
+  padding: 0 17px;
+}
+
+.website-edit-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #e7e3ff;
+  border-top-color: var(--edit-accent);
+  border-radius: 50%;
+  animation: website-edit-spin 800ms linear infinite;
+}
+
+@keyframes website-edit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------------------------------------------------
+   TABLET / DESKTOP
+------------------------------------------------------- */
+
+@media (min-width: 700px) {
+  .website-edit-page {
+    padding: 38px 24px 68px;
+  }
+
+  .website-edit-header {
+    align-items: center;
+    margin-bottom: 28px;
+  }
+
+  .website-edit-header h1 {
+    margin-top: 10px;
+  }
+
+  .website-edit-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+    align-items: center;
+    gap: 24px;
+    padding: 19px 20px;
+  }
+
+  .website-edit-color-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .website-edit-question {
+    padding: 20px;
+  }
+
+  .website-edit-footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 16px;
+  }
+
+  .website-edit-footer-actions {
+    min-width: 300px;
+  }
+}
+
+/* -------------------------------------------------------
+   SMALL MOBILE DEVICES
+------------------------------------------------------- */
+
+@media (max-width: 420px) {
+  .website-edit-page {
+    padding: 18px 11px 48px;
+  }
+
+  .website-edit-header {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .website-edit-header h1 {
+    font-size: 24px;
+  }
+
+  .website-edit-header p {
+    font-size: 11px;
+  }
+
+  .website-edit-version {
+    align-self: flex-start;
+  }
+
+  .website-edit-intro,
+  .website-edit-color-theme,
+  .website-edit-question {
+    border-radius: 17px;
+  }
+
+  .website-edit-question {
+    padding: 15px;
+  }
+
+  .website-edit-footer-actions {
+    grid-template-columns: 1fr 1.45fr;
+  }
+
+  .website-edit-cancel,
+  .website-edit-save {
+    padding: 0 9px;
+    font-size: 9px;
+  }
+}

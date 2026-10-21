@@ -1,0 +1,575 @@
+* {
+  box-sizing: border-box;
+}
+
+.your-website-page {
+  min-height: 100dvh;
+  padding: 20px 14px 48px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(91, 74, 255, 0.09), transparent 28%),
+    radial-gradient(circle at 0% 35%, rgba(0, 122, 255, 0.05), transparent 26%),
+    #f6f7fb;
+  color: #101828;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.your-website-shell {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.your-website-header {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 13px;
+  align-items: start;
+  margin: 2px 2px 20px;
+}
+
+.your-website-brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #111827;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 10px 25px rgba(16, 24, 40, 0.14);
+}
+
+.your-website-kicker,
+.your-website-section-label {
+  display: inline-block;
+  color: #5b4aff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.your-website-header h1 {
+  margin: 5px 0 6px;
+  font-size: 27px;
+  line-height: 1.12;
+  letter-spacing: -0.8px;
+}
+
+.your-website-header p {
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.your-website-header p strong {
+  color: #344054;
+}
+
+.your-website-alert,
+.your-website-success {
+  display: grid;
+  gap: 3px;
+  margin-bottom: 14px;
+  padding: 13px 14px;
+  border-radius: 14px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.your-website-alert {
+  border: 1px solid #f1caca;
+  background: #fff7f7;
+  color: #9b2c2c;
+}
+
+.your-website-success {
+  border: 1px solid #c9ead8;
+  background: #f2fbf6;
+  color: #18704a;
+}
+
+.your-website-business-card,
+.your-website-wizard,
+.your-website-empty {
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.055);
+}
+
+.your-website-business-card {
+  margin-bottom: 14px;
+  padding: 19px;
+}
+
+.your-website-business-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.your-website-business-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  border-radius: 13px;
+  background: #f0edff;
+  color: #5b4aff;
+  font-size: 17px;
+}
+
+.your-website-business-heading h2 {
+  margin: 3px 0 0;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.25px;
+}
+
+.your-website-business-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.your-website-business-grid div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 11px 12px;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.your-website-business-grid span {
+  color: #98a2b3;
+  font-size: 9px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.your-website-business-grid strong {
+  color: #344054;
+  font-size: 12px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.your-website-business-about {
+  margin: 13px 1px 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.your-website-wizard {
+  padding: 20px;
+}
+
+.your-website-wizard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.your-website-wizard-top h2 {
+  margin: 6px 0 6px;
+  font-size: 23px;
+  line-height: 1.2;
+  letter-spacing: -0.55px;
+}
+
+.your-website-wizard-top p {
+  max-width: 580px;
+  margin: 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.your-website-step-count {
+  flex: 0 0 auto;
+  padding: 7px 9px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475467;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.your-website-progress {
+  height: 5px;
+  margin: 18px 0 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf0f5;
+}
+
+.your-website-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #5b4aff;
+  transition: width 220ms ease;
+}
+
+.your-website-question-list {
+  display: grid;
+  gap: 11px;
+}
+
+.your-website-question-card {
+  padding: 17px;
+  border: 1px solid #e9ecf1;
+  border-radius: 18px;
+  background: #fbfcfe;
+}
+
+.your-website-question-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #98a2b3;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+}
+
+.your-website-question-meta b {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #f0edff;
+  color: #5b4aff;
+  font-size: 8px;
+  letter-spacing: 0.4px;
+  text-transform: none;
+}
+
+.your-website-question-card h3 {
+  margin: 9px 0 7px;
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+}
+
+.your-website-helper {
+  margin: 0 0 13px;
+  color: #667085;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.your-website-question-card textarea {
+  display: block;
+  width: 100%;
+  min-height: 128px;
+  resize: vertical;
+  padding: 12px 13px;
+  border: 1px solid #dfe4eb;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  color: #101828;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.your-website-question-card textarea::placeholder {
+  color: #a5adba;
+}
+
+.your-website-question-card textarea:focus {
+  border-color: #9b91ff;
+  box-shadow: 0 0 0 3px rgba(91, 74, 255, 0.09);
+}
+
+.your-website-input-hint {
+  display: block;
+  margin-top: 6px;
+  color: #98a2b3;
+  font-size: 9px;
+  text-align: right;
+}
+
+.your-website-wizard-footer {
+  display: grid;
+  gap: 13px;
+  margin-top: 17px;
+  padding-top: 17px;
+  border-top: 1px solid #edf0f4;
+}
+
+.your-website-wizard-footer > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.your-website-wizard-footer strong {
+  color: #344054;
+  font-size: 12px;
+}
+
+.your-website-wizard-footer span:not(.your-website-button-spinner) {
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.your-website-primary-button,
+.your-website-secondary-button,
+.your-website-link-button {
+  min-height: 46px;
+  border-radius: 13px;
+  padding: 0 15px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 150ms ease, opacity 150ms ease, box-shadow 150ms ease;
+}
+
+.your-website-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  background: #111827;
+  color: #fff;
+  box-shadow: 0 9px 22px rgba(17, 24, 39, 0.14);
+}
+
+.your-website-primary-button > span:last-child {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.your-website-primary-button:hover:not(:disabled),
+.your-website-secondary-button:hover:not(:disabled),
+.your-website-link-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.your-website-primary-button:disabled,
+.your-website-secondary-button:disabled,
+.your-website-link-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.your-website-secondary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.your-website-secondary-button {
+  border: 1px solid #dfe4eb;
+  background: #fff;
+  color: #344054;
+}
+
+.your-website-link-button {
+  border: 0;
+  background: transparent;
+  color: #5b4aff;
+}
+
+.your-website-button-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: yourWebsiteSpin 700ms linear infinite;
+}
+
+.your-website-question-loading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 110px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.your-website-question-loading > div:last-child {
+  display: grid;
+  gap: 3px;
+}
+
+.your-website-question-loading strong {
+  font-size: 12px;
+}
+
+.your-website-question-loading span {
+  color: #98a2b3;
+  font-size: 10px;
+}
+
+.your-website-loading {
+  min-height: 75vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.your-website-loading span {
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+.your-website-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #e2e0f5;
+  border-top-color: #5b4aff;
+  border-radius: 50%;
+  animation: yourWebsiteSpin 700ms linear infinite;
+}
+
+.your-website-spinner.small {
+  width: 22px;
+  height: 22px;
+  border-width: 2px;
+  flex: 0 0 22px;
+}
+
+.your-website-empty {
+  max-width: 560px;
+  margin: 15vh auto 0;
+  padding: 28px 22px;
+  text-align: center;
+}
+
+.your-website-empty-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  border-radius: 15px;
+  background: #fff3f3;
+  color: #c33d3d;
+  font-weight: 900;
+}
+
+.your-website-empty h1 {
+  margin: 7px 0 9px;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.your-website-empty p {
+  margin: 0 auto 20px;
+  max-width: 470px;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+@keyframes yourWebsiteSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 680px) {
+  .your-website-page {
+    padding: 38px 24px 64px;
+  }
+
+  .your-website-business-card {
+    padding: 22px;
+  }
+
+  .your-website-wizard {
+    padding: 24px;
+  }
+
+  .your-website-wizard-footer {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .your-website-generate-button {
+    min-width: 220px;
+  }
+}
+
+
+.your-website-history-button {
+  min-height: 46px;
+  border: 1px solid #d7d1ff;
+  border-radius: 13px;
+  padding: 0 15px;
+  background: #f7f5ff;
+  color: #5b4aff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease, opacity 150ms ease;
+}
+
+.your-website-history-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #f0edff;
+}
+
+.your-website-history-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  .your-website-secondary-actions {
+    display: grid;
+  }
+
+  .your-website-secondary-button,
+  .your-website-link-button,
+  .your-website-history-button {
+    width: 100%;
+  }
+}
+
+
+.your-website-color-theme {
+  margin: 0 0 16px;
+  padding: 17px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+}
+
+.your-website-color-theme h3 { margin: 5px 0 4px; font-size: 16px; line-height: 1.3; }
+.your-website-color-theme p { margin: 0; color: #667085; font-size: 10px; line-height: 1.5; }
+.your-website-color-grid { display: grid; grid-template-columns: 1fr; gap: 9px; margin-top: 14px; }
+.your-website-color-card { padding: 11px; border: 1px solid #e9ecf1; border-radius: 14px; background: #fbfcfe; }
+.your-website-color-card-top { display:flex; justify-content:space-between; gap:8px; align-items:center; margin-bottom:9px; }
+.your-website-color-card-top label { color:#344054; font-size:10px; font-weight:800; }
+.your-website-color-card-top span { color:#98a2b3; font: 800 9px/1 Inter, sans-serif; text-transform:uppercase; }
+.your-website-color-control { display:grid; grid-template-columns:48px 1fr; gap:8px; align-items:center; }
+.your-website-color-picker { position:relative; width:48px; height:42px; overflow:hidden; display:grid; place-items:center; border:1px solid #dfe3e8; border-radius:10px; background:var(--selected-color, #fff); cursor:pointer; }
+.your-website-color-picker.empty { border-style:dashed; background:#fafbfc; color:#98a2b3; }
+.your-website-color-picker.empty span { position:relative; z-index:1; font:800 8px/1 Inter,sans-serif; letter-spacing:.7px; text-transform:uppercase; }
+.your-website-color-picker input[type="color"] { position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; opacity:0; cursor:pointer; }
+.your-website-ai-color-button { min-height:42px; border:1px solid #dfe3e8; border-radius:10px; background:#fff; color:#344054; font:800 10px/1 Inter,sans-serif; cursor:pointer; }
+.your-website-ai-color-button.active { border-color:#dfe3e8; background:#fff; color:#667085; }
+@media (min-width: 700px) { .your-website-color-grid { grid-template-columns:1fr 1fr; } }
