@@ -26,18 +26,17 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Authentication */}
         <Route path="/login" element={<Login />} />
 
+        {/* Admin pages */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/business/:businessId" element={<AdminBusiness />} />
         <Route path="/admin/staff" element={<AdminStaff />} />
         <Route path="/admin/audit-logs" element={<AdminAuditLogs />} />
 
-        {/* -----------------------------------------------------------
-            BUSINESS OWNER / AUTHENTICATED APP
-            These pages use the shared AppBar shell.
-        ------------------------------------------------------------ */}
+        {/* Business-owner pages with the shared navigation */}
         <Route element={<AppBar />}>
           <Route path="/menu" element={<Menu />} />
           <Route path="/business-info" element={<BusinessInfo />} />
@@ -53,15 +52,13 @@ export default function App() {
           <Route path="/qr-codes" element={<YourQRs />} />
         </Route>
 
-        {/* -----------------------------------------------------------
-            CUSTOMER-FACING PAGES
-            These pages intentionally stay outside AppBar.
+        {/* Public/customer pages must stay outside AppBar. */}
+        {/* QR URL format: /:businessSlug/:qrToken */}
+        <Route
+          path="/:businessSlug/:qrToken"
+          element={<PublicQRLanding />}
+        />
 
-            ReviewPage is a customer flow, so it must render as a
-            clean standalone page without the business-owner navigation.
-        ------------------------------------------------------------ */}
-        {/* Slugged public customer URLs. Stable tokens/IDs remain the real identifiers. */}
-        <Route path="/:businessSlug/:qrToken" element={<PublicQRLanding />} />
         <Route
           path="/:businessSlug/customer-dashboard/:publicUrlId"
           element={<CustomerDashboard />}
@@ -71,12 +68,19 @@ export default function App() {
           element={<WebsitePreview />}
         />
 
-        {/* Backward-compatible routes: components canonicalize these to slugged URLs. */}
+        {/* Backward-compatible public routes */}
         <Route path="/q/:qrToken" element={<PublicQRLanding />} />
         <Route path="/review" element={<ReviewPage />} />
-        <Route path="/customer-dashboard/:publicUrlId" element={<CustomerDashboard />} />
-        <Route path="/your-website/preview/:publicUrlId" element={<WebsitePreview />} />
+        <Route
+          path="/customer-dashboard/:publicUrlId"
+          element={<CustomerDashboard />}
+        />
+        <Route
+          path="/your-website/preview/:publicUrlId"
+          element={<WebsitePreview />}
+        />
 
+        {/* Default and unknown routes */}
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
