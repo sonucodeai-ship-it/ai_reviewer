@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { businessSlugify, customerDashboardPath } from "../../qr/publicUrl";
+import { useParams } from "react-router-dom";
 import "./customer_dashboard.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = String(import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
 
-function CustomerDashboard() {
-  const navigate = useNavigate();
-  const { publicUrlId, businessSlug } = useParams();
+function CustomerDashboard({ navigateToReview, navigateToQueryMaker }) {
+  const { publicUrlId } = useParams();
 
   const [selectedDashboard, setSelectedDashboard] = useState(null);
   const [questions, setQuestions] = useState([]);
@@ -32,12 +30,6 @@ function CustomerDashboard() {
       year_established: data.dashboard.year_established || current?.year_established,
     }));
 
-    // Canonicalize the URL using the latest business name from the API.
-    // This also supports older customer-dashboard links without a slug.
-    const canonicalPath = customerDashboardPath(currentBusinessName, id);
-    if (businessSlug !== businessSlugify(currentBusinessName) || window.location.pathname !== canonicalPath) {
-      navigate(canonicalPath, { replace: true });
-    }
   };
 
   const loadQuestions = async (id) => {
@@ -95,7 +87,7 @@ function CustomerDashboard() {
       );
       const data = await response.json();
       if (!response.ok) throw new Error(data.detail || "Unable to generate the review.");
-      navigate("/review", { state: { review: data.review, reviewId: data.review_id, answers, dashboard: selectedDashboard } });
+      navigateToReview({ review: data.review, reviewId: data.review_id, answers, dashboard: selectedDashboard });
     } catch (err) { console.error("Review generation failed:", err); setError(err.message || "Unable to generate the review."); }
     finally { setWorking(false); }
   };
@@ -163,7 +155,13 @@ function CustomerDashboard() {
           </div>
         )}
 
-        {questions.length === 0 ? (
+        {loading ? (
+          <section className="dashboard-empty dashboard-customer-empty" role="status">
+            <div className="dashboard-empty-icon">…</div>
+            <h3>Loading questions</h3>
+            <p>Please wait while we prepare the questionnaire.</p>
+          </section>
+        ) : questions.length === 0 ? (
           <section className="dashboard-empty dashboard-customer-empty">
             <div className="dashboard-empty-icon">?</div>
             <h3>No questions available</h3>
@@ -172,7 +170,7 @@ function CustomerDashboard() {
             </p>
             <button
               type="button"
-              onClick={() => navigate(`/query-maker/${dashboardId}`)}
+              onClick={() => navigateToQueryMaker(selectedDashboard?.dashboard_id)}
             >
               Open Query Maker
               <span>→</span>

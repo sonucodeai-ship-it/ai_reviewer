@@ -4,7 +4,7 @@ import "./dashboard.css";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-function Dashboard() {
+function Dashboard({ navigateToCustomerDashboard }) {
   const navigate = useNavigate();
   const { dashboardId } = useParams();
 
@@ -619,8 +619,9 @@ function Dashboard() {
                         type="button"
                         className="dashboard-card-main"
                         onClick={() =>
-                          navigate(
-                            `/customer-dashboard/${item.public_url_id}`
+                          navigateToCustomerDashboard(
+                            business?.business_name || item.business_name || "Your Business",
+                            item.public_url_id
                           )
                         }
                       >

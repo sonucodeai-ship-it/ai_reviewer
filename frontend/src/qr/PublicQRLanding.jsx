@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { qrApi } from "./qrApi";
-import { businessSlugify, customerDashboardPath, websitePreviewPath, qrLandingPath } from "./publicUrl";
 import "./qr.css";
 
-export default function PublicQRLanding() {
-  const { qrToken, businessSlug } = useParams();
-  const navigate = useNavigate();
-  const location = useLocation();
+export default function PublicQRLanding({ canonicalizeQrLanding, navigateToCustomerDashboard, navigateToWebsitePreview }) {
+  const { qrToken } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -25,15 +22,10 @@ export default function PublicQRLanding() {
     return () => { alive = false; };
   }, [qrToken]);
 
-  // Always canonicalize using the latest saved business name. This also keeps
-  // already-printed QR codes working after the owner renames their business.
+  // App.jsx owns canonical URL construction and replacement navigation.
   useEffect(() => {
-    if (!data || !qrToken) return;
-    const canonicalPath = qrLandingPath(data.business_name, qrToken);
-    if (location.pathname !== canonicalPath || businessSlug !== businessSlugify(data.business_name)) {
-      navigate(canonicalPath, { replace: true });
-    }
-  }, [data, qrToken, businessSlug, location.pathname, navigate]);
+    if (data && qrToken) canonicalizeQrLanding(data.business_name, qrToken);
+  }, [data, qrToken, canonicalizeQrLanding]);
 
   const openDestination = async (type) => {
     if (!data || opening) return;
@@ -45,9 +37,9 @@ export default function PublicQRLanding() {
       console.warn("QR click analytics could not be recorded:", err);
     }
     if (type === "review") {
-      navigate(customerDashboardPath(data.business_name, data.dashboard_public_url_id));
+      navigateToCustomerDashboard(data.business_name, data.dashboard_public_url_id);
     } else {
-      navigate(websitePreviewPath(data.business_name, data.website_public_url_id));
+      navigateToWebsitePreview(data.business_name, data.website_public_url_id);
     }
   };
 

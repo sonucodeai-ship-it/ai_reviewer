@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import QRCode from "qrcode";
 import { qrApi } from "./qrApi";
-import { qrLandingPath } from "./publicUrl";
 import "./qr.css";
 
 const initialForm = { qr_name: "", dashboard_id: "", website_version_id: "" };
@@ -21,7 +20,7 @@ function downloadBlobUrl(url, filename) {
   link.remove();
 }
 
-export default function YourQRs() {
+export default function YourQRs({ getQrLandingUrl }) {
   const [qrCodes, setQrCodes] = useState([]);
   const [resources, setResources] = useState({ dashboards: [], website_versions: [], business: {} });
   const [loading, setLoading] = useState(true);
@@ -108,7 +107,7 @@ export default function YourQRs() {
     setError("");
     try {
       // Only the stable public entry URL is embedded. Destinations are resolved by the backend.
-      const publicUrl = `${window.location.origin}${qrLandingPath(qr.business_name || resources.business?.business_name, qr.qr_token)}`;
+      const publicUrl = getQrLandingUrl(qr.business_name || resources.business?.business_name, qr.qr_token);
       const dataUrl = await QRCode.toDataURL(publicUrl, {
         errorCorrectionLevel: "H", margin: 3, width: 1024,
         color: { dark: "#101828", light: "#FFFFFF" },
